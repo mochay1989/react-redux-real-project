@@ -8,6 +8,7 @@ import {
   Grid,
   Divider,
 } from "@material-ui/core";
+import HomeIcon from "@material-ui/icons/Home";
 
 import "./ProductUI.css";
 
@@ -60,10 +61,16 @@ export class ProductUI extends Component {
             </Grid>
             <Grid item xs={6} className="grid1">
               <Grid container>
-                <Grid item xs={2} className="grid1">
+                <Grid
+                  item
+                  xs={2}
+                  className="grid1"
+                  style={{ height: "7vh", }}
+                >
                   <paper>
-                    {/* <a href="#"><HomeIcon/></a> */}
-                    {/* <Home/> */}
+                    <a href="#">
+                      <HomeIcon />
+                    </a>
                   </paper>
                 </Grid>
 
