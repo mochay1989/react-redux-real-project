@@ -5,6 +5,9 @@
     color: #4592af;
     
 }
+.titleOrders{
+    font-family: 'Pattaya', sans-serif !important;
+}
 .navBar{
     background-color:#000000;
     display: flex;
@@ -22,7 +25,7 @@
     color: #4592af;
 }
 .appBody{
-   margin-top: 90px;
+   margin-top: 100px;
 }  
 
 .grid1{
@@ -31,4 +34,21 @@
 input {
    
     text-align: center ;
+}
+body{
+    background-color: #e3c4a8;
+}
+.iconText{
+    text-decoration: none;
+}
+ .order .order-empty {
+    text-align: center;
+    margin: 98px;
+    color: #7fbdd481;
+}
+ .order .order-empty .fa {
+    font-size: 64px;
+}
+.order .order-empty h1 {
+    font-size: 20px;
 }

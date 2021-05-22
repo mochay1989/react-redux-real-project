@@ -6,8 +6,9 @@ import {
   Paper,
   InputBase,
   Grid,
-  Divider
+  Divider,
 } from "@material-ui/core";
+
 import "./ProductUI.css";
 
 export class ProductUI extends Component {
@@ -20,35 +21,68 @@ export class ProductUI extends Component {
               <Typography className="headerTitle">Odoo</Typography>
             </div>
             <div>
-           <span>Orders &nbsp; &nbsp;</span>
-              <Paper  >
+              <span className="titleOrders">Orders &nbsp; &nbsp;</span>
+              <Paper>
                 <InputBase placeholder="Search Products" />
               </Paper>
             </div>
             <div>
-            <i className="fas fa-wifi iconWifi" ></i>
+              <i className="fas fa-wifi iconWifi"></i>
             </div>
           </Toolbar>
         </AppBar>
-        <div class="appBody">
-     
-      <Grid container className="grid">
-        <Grid item xs={6} style={{height:"50vh"}} className="grid1">
-          <Paper >6</Paper>
-        </Grid>
-        <Grid tiem xs={6} className="grid1">
-          <Paper >6</Paper>
-        </Grid>
-      </Grid>
-      <Divider />
-     
-      
-        
-      </div>
-  
-        
-        
-       
+        <div className="appBody">
+          <Grid container>
+            <Grid item xs={6} style={{ height: "100vh" }} className="grid1">
+              <Grid container>
+                <Grid item xs={12} style={{ height: "50vh" }} className="grid1">
+                  <div className="order-container">
+                    <div className="order">
+                      <div className="order-empty">
+                        <i
+                          role="img"
+                          aria-label="Shopping cart"
+                          title="Shopping cart"
+                          class="fa fa-shopping-cart"
+                        ></i>
+                        <h1>This order is empty</h1>
+                      </div>
+                    </div>
+                  </div>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  style={{ height: "50vh" }}
+                  className="grid1"
+                ></Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={6} className="grid1">
+              <Grid container>
+                <Grid item xs={2} className="grid1">
+                  <paper>
+                    {/* <a href="#"><HomeIcon/></a> */}
+                    {/* <Home/> */}
+                  </paper>
+                </Grid>
+
+                <Grid item xs={5} className="grid1">
+                  <a href="#" className="iconText">
+                    IT
+                  </a>
+                </Grid>
+
+                <Grid item xs={5} className="grid1">
+                  <a href="#" className="iconText">
+                    Electronic
+                  </a>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Divider />
+        </div>
       </div>
     );
   }
