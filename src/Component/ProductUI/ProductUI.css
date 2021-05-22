@@ -71,7 +71,7 @@ body{
     background-color: black;
     width:50px;
     margin:auto;
-    line-height: 50px;
+    line-height: 30px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -83,3 +83,9 @@ body{
 
     width:1px
 } */
+.gridText{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
