@@ -5,6 +5,9 @@
     color: #4592af;
     
 }
+.appBar{
+    position: absolute;
+}
 .titleOrders{
     font-family: 'Pattaya', sans-serif !important;
 }
@@ -24,9 +27,9 @@
     font-size: 2vw;
     color: #4592af;
 }
-/* .appBody{
-   margin-top: 100px;
-}   */
+.appBody{
+   margin-top: 64px;
+}  
 
 .grid1{
     border: 1px solid #4592af;
@@ -52,3 +55,14 @@ body{
 .order .order-empty h1 {
     font-size: 20px;
 }
+.accountBoxIcon{
+    left:3px;
+}
+.buttonNumber{
+    width: 25%;
+    height: 7vh;
+}
+/* .BackspaceIcon{
+
+    width:1px
+} */

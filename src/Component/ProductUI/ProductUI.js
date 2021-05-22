@@ -9,6 +9,8 @@ import {
   Divider,
 } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import BackspaceIcon from '@material-ui/icons/Backspace';
 
 import "./ProductUI.css";
 
@@ -34,9 +36,9 @@ export class ProductUI extends Component {
         </AppBar>
         <div className="appBody">
           <Grid container>
-            <Grid item xs={6} style={{ height: "100vh" }} className="grid1">
+            <Grid item xs={6} style={{ height: "90vh" }} className="grid1">
               <Grid container>
-                <Grid item xs={12} style={{ height: "50vh" }} className="grid1">
+                <Grid item xs={12} style={{ height: "60vh" }} className="grid1">
                   <div className="order-container">
                     <div className="order">
                       <div className="order-empty">
@@ -54,9 +56,39 @@ export class ProductUI extends Component {
                 <Grid
                   item
                   xs={12}
-                  style={{ height: "50vh" }}
+                  style={{ height: "28vh" }}
                   className="grid1"
-                ></Grid>
+                >
+                  <Grid container style={{  height: "28vh"  }}>
+                    <Grid item xs={6} className="grid1">
+                    <button className='customerAccountBox' style={{ width: "100%",height:"8vh"}}>
+                      <AccountBoxIcon className="accountBoxIcon"/>Customer</button><br/>
+                    <button style={{ width: "100%",height:"20vh" }}>
+                      <AccountBoxIcon />Payment</button>
+                    </Grid>
+                    <Grid item xs={6} className="grid1" style={{ width: "100%",height:"28vh" }}>
+                      <button className="buttonNumber">1</button>
+                      <button className="buttonNumber">2</button>
+                      <button className="buttonNumber">3</button>
+                      <button className="buttonNumber">Qty</button><br/>
+                      <button className="buttonNumber">4</button>
+                      <button className="buttonNumber">5</button>
+                      <button className="buttonNumber">6</button>
+                      <button className="buttonNumber">Disc</button><br/>
+                      <button className="buttonNumber">7</button>
+                      <button className="buttonNumber">8</button>
+                      <button className="buttonNumber">9</button>
+                      <button className="buttonNumber">Price</button><br/>
+                      <button className="buttonNumber">+/-</button>
+                      <button className="buttonNumber">0</button>
+                      <button className="buttonNumber">.</button>
+                      <button className="buttonNumber">
+                        <BackspaceIcon style={{ width: "",height:"" }}/>
+                        </button>
+                    </Grid>
+                  </Grid>
+                 
+                </Grid>
               </Grid>
             </Grid>
             <Grid item xs={6} className="grid1">
@@ -65,14 +97,14 @@ export class ProductUI extends Component {
                   item
                   xs={2}
                   className="grid1"
-                  style={{ height: "7vh", }}
+                  style={{ height: "7vh"}}
                 >
                   <paper>
-                    <a href="#">
-                      <HomeIcon />
+                    <a href="#" >
+                      <HomeIcon/>
                     </a>
                   </paper>
-                </Grid>
+                </Grid>  
 
                 <Grid item xs={5} className="grid1">
                   <a href="#" className="iconText">
