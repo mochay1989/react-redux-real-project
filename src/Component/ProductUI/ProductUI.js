@@ -143,27 +143,23 @@ export class ProductUI extends Component {
                   </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                  <Card>
-                    <CardActionArea>
+                  <Card style={{ backgroundColor:'black',width:'25%',height:'38vh' }}>
+                    <CardActionArea style={{ backgroundColor:'yellow'}}>
 
-                      <CardMedia image="/img/aircon.jpg" title="" />
+                      <CardMedia image="/img/aircon.jpg" title="" style={{ height: "30vh",width:"100%",margin:"auto",alignContent:"center" }} />
                       
-                      <CardContent>
-                        <Typography>Lizard</Typography>
-                        <Typography>
-                          Lizards are a widespread group of squamate reptiles,
-                          with over 6,000 species, ranging across all continents
-                          except Antarctica
-                        </Typography>
+                      <CardContent style={{ backgroundColor:'blue'}}>
+                        <Typography style={{ backgroundColor:'green'}}>Aircon</Typography>
+                        
                       </CardContent>
                     </CardActionArea>
                     <CardActions>
-                      <Button size="small" color="primary">
+                      {/* <Button size="small" color="primary">
                         Share
                       </Button>
                       <Button size="small" color="primary">
                         Learn More
-                      </Button>
+                      </Button> */}
                     </CardActions>
                   </Card>
                 </Grid>
