@@ -61,10 +61,14 @@ export class ProductUI extends Component {
                 >
                   <Grid container style={{  height: "28vh"  }}>
                     <Grid item xs={6} className="grid1">
-                    <button className='customerAccountBox' style={{ width: "100%",height:"8vh"}}>
+                    <button className='customerAccountBox' style={{ width: "100%",height:"7vh"}}>
                       <AccountBoxIcon className="accountBoxIcon"/>Customer</button><br/>
-                    <button style={{ width: "100%",height:"20vh" }}>
-                      <AccountBoxIcon />Payment</button>
+                    <button style={{ width: "100%",height:"21vh" }}>
+                      <div className="circle">
+                      <AccountBoxIcon />
+
+                      </div>
+                      Payment</button>
                     </Grid>
                     <Grid item xs={6} className="grid1" style={{ width: "100%",height:"28vh" }}>
                       <button className="buttonNumber">1</button>
