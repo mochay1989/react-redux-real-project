@@ -12,9 +12,8 @@ import {
   CardMedia,
   CardContent,
   Button,
-  CardActions
-} 
-from "@material-ui/core";
+  CardActions,
+} from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import BackspaceIcon from "@material-ui/icons/Backspace";
@@ -143,25 +142,93 @@ export class ProductUI extends Component {
                   </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                  <Card style={{ backgroundColor:'black',width:'25%',height:'38vh' }}>
-                    <CardActionArea style={{ backgroundColor:'yellow'}}>
+                  <div className="cardphoto" >
+                    <div >
+                      <Card style={{ height: "38vh" ,width: "15vw" }}>
+                        <CardActionArea>
+                          <CardMedia
+                            image="/img/laptop.jpg"
+                            title=""
+                            style={{
+                              height: "30vh",
+                              
+                            }}
+                          />
 
-                      <CardMedia image="/img/aircon.jpg" title="" style={{ height: "30vh",width:"100%",margin:"auto",alignContent:"center" }} />
-                      
-                      <CardContent style={{ backgroundColor:'blue'}}>
-                        <Typography style={{ backgroundColor:'green'}}>Aircon</Typography>
-                        
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                      {/* <Button size="small" color="primary">
+                          <CardContent style={{ backgroundColor: "#226089" }}>
+                            <Typography style={{ color: "#fff" }}>
+                              Laptop
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                          {/* <Button size="small" color="primary">
                         Share
                       </Button>
                       <Button size="small" color="primary">
                         Learn More
                       </Button> */}
-                    </CardActions>
-                  </Card>
+                        </CardActions>
+                      </Card>
+                    </div>
+                    
+                    <div>
+                    <Card style={{ height: "38vh",width: "15vw"   }}>
+                        <CardActionArea>
+                          <CardMedia
+                            image="/img/copier.jpg"
+                            title=""
+                            style={{
+                              height: "30vh",
+                              width: "100%",
+                            }}
+                          />
+
+                          <CardContent style={{ backgroundColor: "#226089" }}>
+                            <Typography style={{ color: "#fff" }}>
+                              Copier
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                          {/* <Button size="small" color="primary">
+                        Share
+                      </Button>
+                      <Button size="small" color="primary">
+                        Learn More
+                      </Button> */}
+                        </CardActions>
+                      </Card>
+                    </div>
+                    <div>
+                    <Card style={{ height: "38vh",width: "15vw"   }}>
+                        <CardActionArea>
+                          <CardMedia
+                            image="/img/firemachine.jpg"
+                            title=""
+                            style={{
+                              height: "30vh",
+                              width: "100%",
+                            }}
+                          />
+
+                          <CardContent style={{ backgroundColor: "#226089" }}>
+                            <Typography style={{ color: "#fff" }}>
+                            firemachine
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                          {/* <Button size="small" color="primary">
+                        Share
+                      </Button>
+                      <Button size="small" color="primary">
+                        Learn More
+                      </Button> */}
+                        </CardActions>
+                      </Card>
+                    </div>
+                  </div>
                 </Grid>
               </Grid>
             </Grid>

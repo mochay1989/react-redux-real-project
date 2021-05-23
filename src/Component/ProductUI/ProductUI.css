@@ -89,3 +89,10 @@ body{
     justify-content: center;
     align-items: center;
 }
+.cardphoto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5vh;
+
+}
