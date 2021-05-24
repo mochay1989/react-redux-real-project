@@ -18,6 +18,8 @@ import HomeIcon from "@material-ui/icons/Home";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import BackspaceIcon from "@material-ui/icons/Backspace";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import DesktopMacIcon from '@material-ui/icons/DesktopMac';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import "./ProductUI.css";
 
 export class ProductUI extends Component {
@@ -130,13 +132,13 @@ export class ProductUI extends Component {
 
                     <Grid item xs={5} className="grid1 gridText">
                       <a href="#" className="iconText">
-                        IT
+                      <DesktopMacIcon/>
                       </a>
                     </Grid>
 
                     <Grid item xs={5} className="grid1 gridText">
                       <a href="#" className="iconText">
-                        Electronic
+                      <ShoppingBasketIcon/>
                       </a>
                     </Grid>
                   </Grid>
