@@ -20,10 +20,19 @@ import BackspaceIcon from "@material-ui/icons/Backspace";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { connect } from 'react-redux';
+
 import "./ProductUI.css";
 
+const mapStateToProps=state=>{
+  return{
+      state:state,
+  }
+}
 export class ProductUI extends Component {
-  render() {
+  
+  render()  
+  {
     return (
       <div>
         <AppBar className="appBar">
@@ -121,7 +130,7 @@ export class ProductUI extends Component {
                       item
                       xs={2}
                       className="grid1 gridText"
-                      style={{ height: "7vh" }}
+                      
                     >
                       <paper>
                         <a href="#">
@@ -146,32 +155,38 @@ export class ProductUI extends Component {
                 <Grid item xs={12}>
                   <div className="cardphoto" >
                     <div >
-                      <Card style={{ height: "38vh" ,width: "15vw" }}>
-                        <CardActionArea>
-                          <CardMedia
-                            image="/img/laptop.jpg"
-                            title=""
-                            style={{
-                              height: "30vh",
-                              
-                            }}
-                          />
+                      state.allproducts.map((product) => { return (
+                          <Card style={{ height: "38vh" ,width: "15vw" }}>
+                          <CardActionArea>
+                            <CardMedia
+                              image={product.image}
+                              title=""
+                              style={{
+                                height: "30vh",
+                                
+                              }}
+                            />
+  
+                            <CardContent style={{ backgroundColor: "#226089" }}>
+                              <Typography style={{ color: "#fff" }}>
+                              {product.title}
+                              </Typography>
+                            </CardContent>
+                          </CardActionArea>
+                          <CardActions>
+                            {/* <Button size="small" color="primary">
+                          Share
+                        </Button>
+                        <Button size="small" color="primary">
+                          Learn More
+                        </Button> */}
+                          </CardActions>
+                        </Card>
+                       
 
-                          <CardContent style={{ backgroundColor: "#226089" }}>
-                            <Typography style={{ color: "#fff" }}>
-                              Laptop
-                            </Typography>
-                          </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                          {/* <Button size="small" color="primary">
-                        Share
-                      </Button>
-                      <Button size="small" color="primary">
-                        Learn More
-                      </Button> */}
-                        </CardActions>
-                      </Card>
+                      )
+                      })
+                    
                     </div>
                     
                     <div>
@@ -243,4 +258,4 @@ export class ProductUI extends Component {
   }
 }
 
-export default ProductUI;
+export default connect (mapStateToProps)(ProductUI);
