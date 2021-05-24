@@ -1,6 +1,6 @@
-export const productType={
+const productType = {
+  productsAddNewItem: 'productsAddNewItem',
+  productsChangeQuality: 'productsChangeQuality',
+};
 
-    productsAddNewItem :"productsAddNewItem",
-    productsChangeQuality:"productsChangeQuality"
-
-}
+export default productType;
