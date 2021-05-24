@@ -1,4 +1,6 @@
- import productAction from "../action/productAction"
+ import {productsAddNewItem,productsChangeQuality} from "../action/productAction"
+ import {productType} from  "../type/productType"
+
  const initialState={
      allproducts : [
         {
@@ -61,13 +63,20 @@
       ]
 }
 
-export const productReducer=(state=initialState,action)=>
+export const productsAddNewItemReducer=(state=initialState,action)=>
 {
-    switch (action){
-        case productsAddNewItem:
-            return {...state};
+    switch (action.type){
+        case "productsAddNewItem":
+          return [...state, newItem];
             default:
                 return state;
     }
 
 }
+export const productsChangeQualityReducer=(state=[],action)=>{
+  switch(action.type){
+    case "productsChangeQuality":
+      return [...state, changeQualtiy];
+      default: return state;
+  }
+ }

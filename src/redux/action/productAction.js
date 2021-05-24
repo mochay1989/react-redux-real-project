@@ -1,16 +1,15 @@
 import productType from "../type/productType"
 
-export const  productsAddNewItem=(products)=>{
+export const  productsAddNewItem=(newItem)=>{
     return{
-        type:" productsAddNewItem",
-        payload: allproducts
+        type: productsAddNewItem,
+        payload: newItem
     }
 }
 
-export const  productsChangeQuality=(products)=>{
+export const  productsChangeQuality=(changeQualtiy)=>{
     return{
-        type:" productsChangeQuality",
-        payload: allproducts
-
+        type:productsChangeQuality,
+        payload: changeQualtiy
     }
 }
