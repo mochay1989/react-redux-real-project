@@ -60,10 +60,11 @@
           image: "./img/washing.jpg",
           price: 20,
         },
-      ]
+      ],
+   changeQty:[],
 }
 
-export const productsAddNewItemReducer=(state=initialState,action)=>
+export const productsAddNewItemReducer=(state=initialState.allproducts,action)=>
 {
     switch (action.type){
         case "productsAddNewItem":
@@ -73,7 +74,7 @@ export const productsAddNewItemReducer=(state=initialState,action)=>
     }
 
 }
-export const productsChangeQualityReducer=(state=[],action)=>{
+export const productsChangeQualityReducer=(state=initialState.changeQty,action)=>{
   switch(action.type){
     case "productsChangeQuality":
       return [...state, changeQualtiy];
