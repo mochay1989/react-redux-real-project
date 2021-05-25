@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -13,17 +13,18 @@ import {
   CardContent,
   Button,
   CardActions,
-} from "@material-ui/core";
-import HomeIcon from "@material-ui/icons/Home";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import BackspaceIcon from "@material-ui/icons/Backspace";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import DesktopMacIcon from "@material-ui/icons/DesktopMac";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import { connect } from "react-redux";
-import {allProducts} from '../../redux/reducer/productsReducer'
+} from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import BackspaceIcon from '@material-ui/icons/Backspace';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import DesktopMacIcon from '@material-ui/icons/DesktopMac';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { connect } from 'react-redux';
+import { allProducts } from '../../redux/reducer/productsReducer';
+import { setProducts } from '../../redux/action/productAction';
 
-import "./ProductUI.css";
+import './ProductUI.css';
 
 const mapStateToProps = (state) => {
   return {
@@ -31,22 +32,26 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setProducts: (products) => dispatch(setProducts(products)),
+  };
+};
+
 export class ProductUI extends Component {
   homeClick = () => {
     const homeClickitem = allProducts.filter(
-      (product) => product.Category === "IT" || product.Category === "Electric"
+      (product) => product.Category === 'IT' || product.Category === 'Electric'
     );
-    this.setState({
-      allProducts: homeClickitem 
-    });
+    this.props.setProducts(homeClickitem);
   };
-  itClick=()=>{
-    const itClickitem=allProducts.filter((product)=>product.Category==="IT");
-      
-    this.setState({
-      allProducts:itClickitem
-    })
-  }
+  itClick = () => {
+    const itClickitem = allProducts.filter(
+      (product) => product.Category === 'IT'
+    );
+
+    this.props.setProducts(itClickitem);
+  };
   render() {
     return (
       <div>
@@ -68,9 +73,9 @@ export class ProductUI extends Component {
         </AppBar>
         <div className="appBody">
           <Grid container>
-            <Grid item xs={6} style={{ height: "90vh" }} className="grid1">
+            <Grid item xs={6} style={{ height: '90vh' }} className="grid1">
               <Grid container>
-                <Grid item xs={12} style={{ height: "58vh" }} className="grid1">
+                <Grid item xs={12} style={{ height: '58vh' }} className="grid1">
                   <div className="order-container">
                     <div className="order">
                       <div className="order-empty">
@@ -85,21 +90,21 @@ export class ProductUI extends Component {
                     </div>
                   </div>
                 </Grid>
-                <Grid item xs={12} style={{ height: "32vh" }} className="grid1">
-                  <Grid container style={{ height: "28vh", padding: "10px" }}>
+                <Grid item xs={12} style={{ height: '32vh' }} className="grid1">
+                  <Grid container style={{ height: '28vh', padding: '10px' }}>
                     <Grid item xs={6} className="grid1">
                       <button
                         className="customerAccountBox"
-                        style={{ width: "100%", height: "7vh" }}
+                        style={{ width: '100%', height: '7vh' }}
                       >
                         <AccountBoxIcon className="accountBoxIcon" />
                         Customer
                       </button>
                       <br />
-                      <button style={{ width: "100%", height: "21vh" }}>
+                      <button style={{ width: '100%', height: '21vh' }}>
                         <div className="circle">
                           <ArrowForwardIosIcon
-                            style={{ color: "#fff", paddingTop: "10px" }}
+                            style={{ color: '#fff', paddingTop: '10px' }}
                           />
                         </div>
                         Payment
@@ -109,7 +114,7 @@ export class ProductUI extends Component {
                       item
                       xs={6}
                       className="grid1"
-                      style={{ width: "100%", height: "28vh" }}
+                      style={{ width: '100%', height: '28vh' }}
                     >
                       <button className="buttonNumber">1</button>
                       <button className="buttonNumber">2</button>
@@ -130,7 +135,7 @@ export class ProductUI extends Component {
                       <button className="buttonNumber">0</button>
                       <button className="buttonNumber">.</button>
                       <button className="buttonNumber">
-                        <BackspaceIcon style={{ width: "", height: "" }} />
+                        <BackspaceIcon style={{ width: '', height: '' }} />
                       </button>
                     </Grid>
                   </Grid>
@@ -156,7 +161,11 @@ export class ProductUI extends Component {
                     </Grid>
 
                     <Grid item xs={5} className="grid1 gridText">
-                      <a href="#" className="iconText" onClick={this.electronicClick}>
+                      <a
+                        href="#"
+                        className="iconText"
+                        onClick={this.electronicClick}
+                      >
                         <ShoppingBasketIcon />
                       </a>
                     </Grid>
@@ -168,7 +177,7 @@ export class ProductUI extends Component {
                       {this.props.products.map((product) => {
                         return (
                           <Card
-                            style={{ height: "38vh", width: "15vw" }}
+                            style={{ height: '38vh', width: '15vw' }}
                             className="cardphotoeach"
                           >
                             <CardActionArea>
@@ -176,14 +185,14 @@ export class ProductUI extends Component {
                                 image={product.image}
                                 title=""
                                 style={{
-                                  height: "30vh",
+                                  height: '30vh',
                                 }}
                               />
 
                               <CardContent
-                                style={{ backgroundColor: "#226089" }}
+                                style={{ backgroundColor: '#226089' }}
                               >
-                                <Typography style={{ color: "#fff" }}>
+                                <Typography style={{ color: '#fff' }}>
                                   {product.title}
                                 </Typography>
                               </CardContent>
@@ -213,4 +222,4 @@ export class ProductUI extends Component {
   }
 }
 
-export default connect(mapStateToProps)(ProductUI);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductUI);
