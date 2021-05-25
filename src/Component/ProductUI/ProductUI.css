@@ -97,6 +97,12 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 5vh;
+   
 
+
+}
+.cardphotoeach{
+    margin: 10px 0;
+    margin-right: 15px;
+    
 }

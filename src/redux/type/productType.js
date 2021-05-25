@@ -1,6 +1,6 @@
-const productType = {
-  productsAddNewItem: 'productsAddNewItem',
-  productsChangeQuality: 'productsChangeQuality',
-};
 
-export default productType;
+ export const productsAddNewItem = 'productsAddNewItem';
+ export const  productsChangeQuality= 'productsChangeQuality';
+
+
+
