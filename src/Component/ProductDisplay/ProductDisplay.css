@@ -1,0 +1,15 @@
+
+
+.cardphoto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+
+
+}
+.cardphotoeach{
+    margin: 10px 0;
+    margin-right: 15px;
+    
+}

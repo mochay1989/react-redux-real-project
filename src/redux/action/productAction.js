@@ -2,6 +2,8 @@ import {
   productsAddNewItem,
   productsChangeQuality,
   changeProducts,
+  searchProducts,
+  cartDisplay
 } from '../type/productType';
 
 export const addNewItem = (newItem) => {
@@ -24,3 +26,16 @@ export const setProducts = (products) => {
     payload: products,
   };
 };
+
+export const searchText=(search)=>{
+  return { 
+    type:searchProducts,
+    payload : search,
+}
+}
+export const cartShow=(cart)=>{
+    return { 
+      type: cartDisplay,
+      payload :cart,
+  }
+  }
