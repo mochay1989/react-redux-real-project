@@ -1,5 +1,13 @@
 import React, { Component } from 'react'
 import './CartUI.css';
+import {connect} from "react-redux"
+
+const mapStateToProps = (state) => {
+    return {
+    
+      cart: state.cartData,
+    };
+  };
 
 export class CartUI extends Component {
     render() {
@@ -25,4 +33,4 @@ export class CartUI extends Component {
     }
 }
 
-export default CartUI
+export default connect(mapStateToProps )(CartUI)
