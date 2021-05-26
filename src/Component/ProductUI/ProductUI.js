@@ -73,8 +73,8 @@ export class ProductUI extends Component {
     const cart = this.props.cart;
     if (clickitem) {
     
-      this.props.cartShow(cart);
-      console.log(cart);
+      this.props.cartShow(clickitem);
+     
     }
   };
 
