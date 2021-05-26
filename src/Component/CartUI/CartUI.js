@@ -11,7 +11,9 @@ export class CartUI extends Component {
                       
                        <div>
                             key={cart.id}
-                          <h1>{cart.title}</h1> 
+                     <h1>{cart.title}</h1> 
+                     <h1>{cart.id}</h1> 
+                     console.log({cart.title})
 
                        </div>
                    )

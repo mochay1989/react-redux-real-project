@@ -123,10 +123,11 @@ export class ProductUI extends Component {
                       </div>
                     </div>
                   </div>
-                  <CartUI  cart={this.cart}
-                    image={this.cart.image}
-                    title={this.cart.title}
-                    id={this.cart.id} />
+                  <CartUI  cart={cart}
+                    // image={this.cart.image}
+                    // title={this.cart.title}s
+                    // id={this.cart.id} 
+                    />
                 </Grid>
                 <Grid item xs={12} style={{ height: "32vh" }} className="grid1">
                   <Grid container style={{ height: "28vh", padding: "10px" }}>
