@@ -18,10 +18,12 @@ export class CartUI extends Component {
               <div>
                 <h1>{cart.title}</h1>
                 <h1>{cart.price}</h1>
+                <h1>{cart.quantity}</h1>
+                <h1>{cart.disc}</h1>
               </div>
             );
           })}
-          <h1>Hello</h1>
+        
         </div>
       </div>
     );

@@ -72,13 +72,13 @@ export class ProductUI extends Component {
   };
   clickProducts = (id) => {
     const clickitem = allProducts.find((product) => product.id === id);
-    const cart = this.props.cart;
+    // const cart = this.props.cart;
 
-    if (cart.find((item) => item.id === id)) {
-    } else {
+    // if (cart.find((item) => item.id === id)) {
+    // } else {
       console.log(clickitem);
       this.props.addToCart(clickitem);
-    }
+    // }
   };
 
   render() {

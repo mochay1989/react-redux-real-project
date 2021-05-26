@@ -152,11 +152,11 @@ export const initialreducer = (state = initialState, action) => {
 export const cartreducer = (state = cart, action) => {
   switch (action.type) {
     case addToCart:
-      return [...state, action.payload];
-    case changeItem:
-      return state.map((item) =>
-        item.id === action.payload.id ? action.payload : item
-      );
+      return ([...state, action.payload]);
+    // case changeItem:
+    //   return state.map((item) =>
+    //     item.id === action.payload.id ? action.payload : item
+    //   );
     default:
       return state;
   }
