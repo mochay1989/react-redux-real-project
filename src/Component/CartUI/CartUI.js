@@ -10,14 +10,15 @@ export class CartUI extends Component {
                    return( 
                       
                        <div>
-                            key={cart.id}
+                           
                      <h1>{cart.title}</h1> 
-                     <h1>{cart.id}</h1> 
-                     console.log({cart.title})
+                     <h1>{cart.price}</h1> 
+                     
 
                        </div>
                    )
                })}
+               <h1>Hello</h1>
             </div>
             </div>
         )

@@ -71,6 +71,15 @@ body{
     height: 7vh;
     vertical-align: middle;
 }
+.buttonNumber:active{
+    background-color: black;
+    color: #fff;
+}
+.buttonNumber1{
+    width: 25%;
+    height: 7vh;
+    vertical-align: middle;
+}
 .circle{
     background-color: black;
     width:50px;

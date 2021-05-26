@@ -7,7 +7,6 @@ import {
   InputBase,
   Grid,
   Divider,
- 
 } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
@@ -16,7 +15,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import DesktopMacIcon from "@material-ui/icons/DesktopMac";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { connect } from "react-redux";
-import { allProducts, cart } from "../../redux/reducer/productsReducer";
+import { allProducts } from "../../redux/reducer/productsReducer";
 import {
   setProducts,
   searchText,
@@ -30,6 +29,7 @@ import ProductDisplay from "../ProductDisplay/ProductDisplay";
 const mapStateToProps = (state) => {
   return {
     products: state.allData,
+    cart: state.cartData,
   };
 };
 
@@ -40,7 +40,6 @@ const mapDispatchToProps = (dispatch) => {
     cartShow: (products) => dispatch(cartShow(products)),
   };
 };
-
 
 export class ProductUI extends Component {
   searchText = (value) => {
@@ -71,6 +70,7 @@ export class ProductUI extends Component {
   };
   clickProducts = (id) => {
     const clickitem = allProducts.filter((product) => product.id === id);
+    const cart = this.props.cart;
     if (clickitem) {
       cart.push({ ...clickitem, quantity: 1, disc: 0 });
       this.props.cartShow(cart);
@@ -123,11 +123,14 @@ export class ProductUI extends Component {
                       </div>
                     </div>
                   </div>
-                  <CartUI  cart={cart}
-                    // image={this.cart.image}
-                    // title={this.cart.title}s
-                    // id={this.cart.id} 
-                    />
+                  <CartUI
+                    cart={this.props.cart}
+                    title={this.props.cart.title}
+                    id={this.props.cart.id}
+                    price={this.props.price}
+                    quantity={this.props.quantity}
+                    disc={this.props.disc}
+                  />
                 </Grid>
                 <Grid item xs={12} style={{ height: "32vh" }} className="grid1">
                   <Grid container style={{ height: "28vh", padding: "10px" }}>
@@ -158,22 +161,22 @@ export class ProductUI extends Component {
                       <button className="buttonNumber">1</button>
                       <button className="buttonNumber">2</button>
                       <button className="buttonNumber">3</button>
-                      <button className="buttonNumber">Qty</button>
+                      <button className="buttonNumber1">Qty</button>
                       <br />
                       <button className="buttonNumber">4</button>
                       <button className="buttonNumber">5</button>
                       <button className="buttonNumber">6</button>
-                      <button className="buttonNumber">Disc</button>
+                      <button className="buttonNumber1">Disc</button>
                       <br />
                       <button className="buttonNumber">7</button>
                       <button className="buttonNumber">8</button>
                       <button className="buttonNumber">9</button>
-                      <button className="buttonNumber">Price</button>
+                      <button className="buttonNumber1">Price</button>
                       <br />
                       <button className="buttonNumber">+/-</button>
                       <button className="buttonNumber">0</button>
                       <button className="buttonNumber">.</button>
-                      <button className="buttonNumber">
+                      <button className="buttonNumber1">
                         <BackspaceIcon style={{ width: "", height: "" }} />
                       </button>
                     </Grid>

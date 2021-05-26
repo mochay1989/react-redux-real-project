@@ -128,26 +128,31 @@ export const allProducts = [
 
 export const cart=[];
 
-export const reducer = (state = initialState, action) => {
+export const initialreducer = (state = initialState, action) => {
   switch (action.type) {
-    case productsAddNewItem:
-      return [...state, action.payload];
-    case productsChangeQuality:
-      return [
-        state.map((product) =>
-          product.id === action.payload
-            ? { ...product, quantity: product.quantity + 1 }
-            : product
-        ),
-      ];
+    // case productsAddNewItem:
+    //   return [...state, action.payload];
+    // case productsChangeQuality:
+    //   return [
+    //     state.map((product) =>
+    //       product.id === action.payload
+    //         ? { ...product, quantity: product.quantity + 1 }
+    //         : product
+    //     ),
+    //   ];
     case changeProducts:
       return action.payload;
     case searchProducts:
       return action.payload;
-    case cartDisplay:
-      return action.payload;
-
     default:
       return state;
   }
 };
+
+export const cartreducer=(state=cart,action)=>{
+  switch(action.type){
+    case cartDisplay:
+      return action.payload;
+    default :return state
+  }
+}
