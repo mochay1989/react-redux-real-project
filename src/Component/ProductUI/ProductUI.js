@@ -72,7 +72,7 @@ export class ProductUI extends Component {
     const clickitem = allProducts.filter((product) => product.id === id);
     const cart = this.props.cart;
     if (clickitem) {
-      cart.push({ ...clickitem, quantity: 1, disc: 0 });
+    
       this.props.cartShow(cart);
       console.log(cart);
     }

@@ -36,6 +36,6 @@ export const searchText=(search)=>{
 export const cartShow=(cart)=>{
     return { 
       type: cartDisplay,
-      payload :cart,
+      payload :  cart.push({ ...cart, quantity: 1, disc: 0 }),
   }
   }
