@@ -3,7 +3,7 @@ import {
   productsChangeQuality,
   changeProducts,
   searchProducts,
-  cartDisplay
+  addToCart,
 } from '../type/productType';
 
 export const addNewItem = (newItem) => {
@@ -27,15 +27,16 @@ export const setProducts = (products) => {
   };
 };
 
-export const searchText=(search)=>{
-  return { 
-    type:searchProducts,
-    payload : search,
-}
-}
-export const cartShow=(cart)=>{
-    return { 
-      type: cartDisplay,
-      payload :  cart.push({ ...cart, quantity: 1, disc: 0 }),
-  }
-  }
+export const searchText = (search) => {
+  return {
+    type: searchProducts,
+    payload: search,
+  };
+};
+
+export const addItemToCart = (item) => {
+  return {
+    type: addToCart,
+    payload: item,
+  };
+};
