@@ -4,14 +4,16 @@ import {
   changeProducts,
   searchProducts,
   addToCart,
+  addNewItem,
+  changeItem
 } from '../type/productType';
 
-export const addNewItem = (newItem) => {
-  return {
-    type: productsAddNewItem,
-    payload: newItem,
-  };
-};
+// export const addNewItem = (newItem) => {
+//   return {
+//     type: productsAddNewItem,
+//     payload: newItem,
+//   };
+// };
 
 export const changeQUantity = (changeQualtiy) => {
   return {
@@ -40,3 +42,10 @@ export const addItemToCart = (item) => {
     payload: item,
   };
 };
+
+export const changeItemToCart=(cItem)=>{
+  return{
+    type :  changeItem,
+    payload:cItem
+  }
+}

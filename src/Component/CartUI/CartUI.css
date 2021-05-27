@@ -3,3 +3,9 @@
     background-color: black;
     top:150px
 }
+.cartUI{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin :20px 0;
+}

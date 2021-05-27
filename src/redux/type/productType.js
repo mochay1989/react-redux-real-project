@@ -3,4 +3,5 @@ export const productsChangeQuality = 'productsChangeQuality';
 export const changeProducts = 'changeProducts';
 export const searchProducts = 'searchProducts';
 export const addToCart = 'addToCart';
-export const changeItem = 'changeItem';
+export const  changeItem = ' changeItem';
+
