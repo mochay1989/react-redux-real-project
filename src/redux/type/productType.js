@@ -4,4 +4,5 @@ export const changeProducts = 'changeProducts';
 export const searchProducts = 'searchProducts';
 export const addToCart = 'addToCart';
 export const  changeItem = ' changeItem';
+export const currentID='currentID'
 

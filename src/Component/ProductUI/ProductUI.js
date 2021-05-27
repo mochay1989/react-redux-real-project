@@ -15,13 +15,14 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import DesktopMacIcon from '@material-ui/icons/DesktopMac';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { connect } from 'react-redux';
-import { allProducts } from '../../redux/reducer/productsReducer';
+import { allProducts, currentIDdetail} from '../../redux/reducer/productsReducer';
 import {
   setProducts,
   searchText,
   cartShow,
   addItemToCart,
   changeItemToCart,
+  currentIDid
 } from '../../redux/action/productAction';
 
 import './ProductUI.css';
@@ -33,6 +34,7 @@ const mapStateToProps = (state) => {
   return {
     products: state.allData,
     cart: state.cartData,
+    currentid:state.currentid ,
   };
 };
 
@@ -42,6 +44,8 @@ const mapDispatchToProps = (dispatch) => {
     searchText: (products) => dispatch(searchText(products)),
     addToCart: (product) => dispatch(addItemToCart(product)),
     changeItemToCart: (products) => dispatch(changeItemToCart(products)),
+   
+    currentId: (id) => dispatch(currentIDid (id))
   };
 };
 
@@ -75,11 +79,18 @@ export class ProductUI extends Component {
   clickProducts = (id) => {
     const clickitem = allProducts.find((product) => product.id === id);
     const cart = this.props.cart;
+   
     console.log(cart, id);
     const item = cart.find((item) => item.id === id);
     console.log(item);
     if (!item) this.props.addToCart({ ...clickitem, quantity: 1, disc: 0 });
     else this.props.changeItemToCart({ ...item, quantity: item.quantity + 1 });
+
+    // current = cart.findIndex(item=>item.id===id);
+   
+    this.props.currentId(id);
+
+
   };
 
   render() {
@@ -134,6 +145,7 @@ export class ProductUI extends Component {
                     price={this.props.price}
                     quantity={this.props.quantity}
                     disc={this.props.disc}
+                    currentid={this.props.currentid}
                   />
                 </Grid>
                 <Grid item xs={12} style={{ height: '32vh' }} className="grid1">

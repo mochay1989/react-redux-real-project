@@ -13,13 +13,19 @@ export class CartUI extends Component {
     return (
       <div>
         <div>
-          {this.props.cart.map((cart) => {
+          {this.props.cart.map((cart,id) => {
             return (
-              <div className="cartUI">
-                <div>
+              <div className="cartUI" style={
+                this.props.currentid === id
+                  ? { color: "blue", backgroundColor: "yellow" }
+                  : { color: "black" }}>
+                <div
+               
+              
+                >
                   <span>{cart.title}</span> <br></br>
                   <span>
-                    ${cart.quantity} at ${cart.price} with {cart.disc} discount
+                    at {cart.quantity} at ${cart.price} with {cart.disc} discount
                   </span>
                 </div>
 

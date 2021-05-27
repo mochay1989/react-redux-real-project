@@ -5,6 +5,7 @@ import {
   changeProducts,
   searchProducts,
   cartDisplay,
+  currentID
 } from '../type/productType';
 
 export const initialState = [
@@ -127,6 +128,7 @@ export const allProducts = [
 ];
 
 export const cart = [];
+export const currentIDdetail=null;
 
 export const initialreducer = (state = initialState, action) => {
   switch (action.type) {
@@ -158,7 +160,18 @@ export const cartreducer = (state = cart, action) => {
       return state.map((item) =>
         item.id === action.payload.id ? action.payload : item
       );
+      // return action.payload;
     default:
       return state;
   }
 };
+
+
+export const currentIDreducer=(state= currentIDdetail,action)=>
+{
+  switch(action.type){
+    case currentID:
+    return state=action.payload
+    default:return state;
+  }
+}

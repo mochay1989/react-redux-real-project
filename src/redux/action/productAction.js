@@ -5,7 +5,8 @@ import {
   searchProducts,
   addToCart,
   addNewItem,
-  changeItem
+  changeItem,
+  currentID
 } from '../type/productType';
 
 // export const addNewItem = (newItem) => {
@@ -47,5 +48,12 @@ export const changeItemToCart=(cItem)=>{
   return{
     type :  changeItem,
     payload:cItem
+  }
+}
+
+export const currentIDid=(id)=>{
+  return{
+    type: currentID,
+    payload:id
   }
 }
