@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -7,27 +7,27 @@ import {
   InputBase,
   Grid,
   Divider,
-} from "@material-ui/core";
-import HomeIcon from "@material-ui/icons/Home";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
-import BackspaceIcon from "@material-ui/icons/Backspace";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import DesktopMacIcon from "@material-ui/icons/DesktopMac";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import { connect } from "react-redux";
-import { allProducts } from "../../redux/reducer/productsReducer";
+} from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import BackspaceIcon from '@material-ui/icons/Backspace';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import DesktopMacIcon from '@material-ui/icons/DesktopMac';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { connect } from 'react-redux';
+import { allProducts } from '../../redux/reducer/productsReducer';
 import {
   setProducts,
   searchText,
   cartShow,
   addItemToCart,
   changeItemToCart,
-} from "../../redux/action/productAction";
+} from '../../redux/action/productAction';
 
-import "./ProductUI.css";
-import CartUI from "../CartUI/CartUI";
-import ProductDisplay from "../ProductDisplay/ProductDisplay";
-import { changeItem } from "../../redux/type/productType";
+import './ProductUI.css';
+import CartUI from '../CartUI/CartUI';
+import ProductDisplay from '../ProductDisplay/ProductDisplay';
+import { changeItem } from '../../redux/type/productType';
 
 const mapStateToProps = (state) => {
   return {
@@ -54,20 +54,20 @@ export class ProductUI extends Component {
   };
   homeClick = () => {
     const homeClickitem = allProducts.filter(
-      (product) => product.Category === "IT" || product.Category === "Electric"
+      (product) => product.Category === 'IT' || product.Category === 'Electric'
     );
     this.props.setProducts(homeClickitem);
   };
   itClick = () => {
     const itClickitem = allProducts.filter(
-      (product) => product.Category === "IT"
+      (product) => product.Category === 'IT'
     );
 
     this.props.setProducts(itClickitem);
   };
   electronicClick = () => {
     const electronicClickitem = allProducts.filter(
-      (product) => product.Category === "Electric"
+      (product) => product.Category === 'Electric'
     );
 
     this.props.setProducts(electronicClickitem);
@@ -75,16 +75,11 @@ export class ProductUI extends Component {
   clickProducts = (id) => {
     const clickitem = allProducts.find((product) => product.id === id);
     const cart = this.props.cart;
-
-    if (clickitem) {
-     
-      const cartIndex=cart.findIndex((cart)=>cart.id===clickitem.id);
-      this.props.addToCart({ ...clickitem, quantity: 1, disc: 0 });
-      
-        this.props.changeItemToCart(clickitem[cartIndex].quantity++)
-      
-      
-    }
+    console.log(cart, id);
+    const item = cart.find((item) => item.id === id);
+    console.log(item);
+    if (!item) this.props.addToCart({ ...clickitem, quantity: 1, disc: 0 });
+    else this.props.changeItemToCart({ ...item, quantity: item.quantity + 1 });
   };
 
   render() {
@@ -111,12 +106,12 @@ export class ProductUI extends Component {
         </AppBar>
         <div className="appBody">
           <Grid container>
-            <Grid item xs={6} style={{ height: "90vh" }} className="grid1">
+            <Grid item xs={6} style={{ height: '90vh' }} className="grid1">
               <Grid container>
                 <Grid
                   item
                   xs={12}
-                  style={{ height: "58vh", overflowY: "auto" }}
+                  style={{ height: '58vh', overflowY: 'auto' }}
                   className="grid1"
                 >
                   <div className="order-container">
@@ -141,21 +136,21 @@ export class ProductUI extends Component {
                     disc={this.props.disc}
                   />
                 </Grid>
-                <Grid item xs={12} style={{ height: "32vh" }} className="grid1">
-                  <Grid container style={{ height: "28vh", padding: "10px" }}>
+                <Grid item xs={12} style={{ height: '32vh' }} className="grid1">
+                  <Grid container style={{ height: '28vh', padding: '10px' }}>
                     <Grid item xs={6} className="grid1">
                       <button
                         className="customerAccountBox"
-                        style={{ width: "100%", height: "7vh" }}
+                        style={{ width: '100%', height: '7vh' }}
                       >
                         <AccountBoxIcon className="accountBoxIcon" />
                         Customer
                       </button>
                       <br />
-                      <button style={{ width: "100%", height: "21vh" }}>
+                      <button style={{ width: '100%', height: '21vh' }}>
                         <div className="circle">
                           <ArrowForwardIosIcon
-                            style={{ color: "#fff", paddingTop: "10px" }}
+                            style={{ color: '#fff', paddingTop: '10px' }}
                           />
                         </div>
                         Payment
@@ -165,7 +160,7 @@ export class ProductUI extends Component {
                       item
                       xs={6}
                       className="grid1"
-                      style={{ width: "100%", height: "28vh" }}
+                      style={{ width: '100%', height: '28vh' }}
                     >
                       <button className="buttonNumber">1</button>
                       <button className="buttonNumber">2</button>
@@ -186,7 +181,7 @@ export class ProductUI extends Component {
                       <button className="buttonNumber">0</button>
                       <button className="buttonNumber">.</button>
                       <button className="buttonNumber1">
-                        <BackspaceIcon style={{ width: "", height: "" }} />
+                        <BackspaceIcon style={{ width: '', height: '' }} />
                       </button>
                     </Grid>
                   </Grid>
