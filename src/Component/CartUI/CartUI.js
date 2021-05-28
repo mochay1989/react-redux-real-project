@@ -31,7 +31,7 @@ export class CartUI extends Component {
                 className="cartUI"
                 style={
                   this.props.currentid === cart.id
-                    ? { color: 'blue', backgroundColor: 'yellow' }
+                    ? { color: '#fff', backgroundColor: '#226089' }
                     : { color: 'black' }
                 }
                 onClick={() => this.changeCurrentId(cart.id)}
